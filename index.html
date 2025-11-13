@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Management Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Memory Management Simulator</h1>
+
+    <div class="init-section">
+      <input type="number" id="memSize" placeholder="Memory Size" />
+      <select id="policy">
+        <option value="FIFO">FIFO</option>
+        <option value="LRU">LRU</option>
+      </select>
+      <button id="initBtn">Initialize</button>
+    </div>
+
+    <div class="action-section">
+      <input type="number" id="pid" placeholder="Process ID" />
+      <input type="number" id="psize" placeholder="Memory Size" />
+      <button id="allocBtn">Allocate</button>
+      <button id="deallocBtn">Deallocate</button>
+      <button id="useBtn">Use (for LRU)</button>
+      <button id="policyBtn">Switch Policy</button>
+      <button id="defragBtn">Defragment</button>
+    </div>
+
+    <div id="infoBox">
+      <p><strong>Policy:</strong> <span id="policyDisplay">FIFO</span></p>
+      <p><strong>Status:</strong> <span id="statusText">Ready</span></p>
+    </div>
+
+    <div class="memory-container">
+      <h2>Memory Map</h2>
+      <div id="memoryMap" class="memory-map"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
