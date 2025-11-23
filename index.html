@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Memory Management Simulator</title>
+  <link rel="icon" href="./images/operative-system.png" type="images/png">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,9 +13,10 @@
 
     <div class="init-section">
       <input type="number" id="memSize" placeholder="Memory Size" />
-      <select id="policy">
+      <select id="policySelect">
         <option value="FIFO">FIFO</option>
         <option value="LRU">LRU</option>
+        <option value="OPTIMAL">OPTIMAL</option>
       </select>
       <button id="initBtn">Initialize</button>
     </div>
@@ -24,9 +26,19 @@
       <input type="number" id="psize" placeholder="Memory Size" />
       <button id="allocBtn">Allocate</button>
       <button id="deallocBtn">Deallocate</button>
-      <button id="useBtn">Use (for LRU)</button>
+      <button id="useBtn">Use (for LRU/trace)</button>
       <button id="policyBtn">Switch Policy</button>
       <button id="defragBtn">Defragment</button>
+    </div>
+
+    <div class="trace-section">
+      <label for="traceInput">Future Trace</label>
+      <textarea id="traceInput" rows="2"></textarea>
+
+      <div class="trace-controls">
+        <button id="loadTraceBtn">Load Trace</button>
+        <span id="traceStatus">No trace loaded</span>
+      </div>
     </div>
 
     <div id="infoBox">
